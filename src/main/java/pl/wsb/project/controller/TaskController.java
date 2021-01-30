@@ -19,7 +19,6 @@ public class TaskController {
     @GetMapping("/")
     public String index(Model model){
         model.addAttribute("listTasks", taskService.listAll());
-        System.out.println("TU JESTEM");
         return "index";
     }
 
@@ -38,7 +37,7 @@ public class TaskController {
 
     @RequestMapping("/edit/{id}")
     public ModelAndView edit(@PathVariable(name = "id") int id){
-        ModelAndView modelAndView = new ModelAndView("task/edit");
+        ModelAndView modelAndView = new ModelAndView("edit");
         modelAndView.addObject("task", taskService.find(id));
         return modelAndView;
     }

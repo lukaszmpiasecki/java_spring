@@ -8,11 +8,11 @@
 		<version>2.4.0-SNAPSHOT</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>pl.wsb.students</groupId>
-	<artifactId>spring-mvc-course-app</artifactId>
+	<groupId>pl.wsb.project</groupId>
+	<artifactId>java-app</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>spring-mvc-course-app</name>
-	<description>Spring MVC Course App</description>
+	<name>java-app</name>
+	<description>Java App</description>
 
 	<properties>
 		<java.version>11</java.version>
@@ -22,10 +22,6 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-security</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -49,11 +45,6 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.security</groupId>
-			<artifactId>spring-security-test</artifactId>
 			<scope>test</scope>
 		</dependency>
 		<dependency>

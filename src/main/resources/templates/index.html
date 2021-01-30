@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8"/>
     <title>Zadania</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" type="text/css" th:href="@{/style.css}"/>
 </head>
 <body>
 <div align="center">
@@ -29,8 +29,8 @@
             <td th:text="${task.taskDesc}">Opis</td>
             <td th:text="${task.taskDate}">Data wykonania</td>
             <td>
-                <a href="@{'/edit' + ${task.id}}">Edytuj</a>
-                <a href="@{'/delete' + ${task.id}}"> Usuń</a>
+                <a th:href="@{'/edit/' + ${task.id}}">Edytuj</a>
+                <a th:href="@{'/delete/' + ${task.id}}"> Usuń</a>
             </td>
         </tr>
         </tbody>
