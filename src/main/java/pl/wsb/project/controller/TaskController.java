@@ -3,16 +3,14 @@ package pl.wsb.project.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
+
 import org.springframework.web.servlet.ModelAndView;
 import pl.wsb.project.model.Task;
 import pl.wsb.project.service.TaskService;
 
 @Controller
-@RequestMapping("/task")
+@RequestMapping("/")
 public class TaskController {
 
     @Autowired
@@ -21,20 +19,21 @@ public class TaskController {
     @GetMapping("/")
     public String index(Model model){
         model.addAttribute("listTasks", taskService.listAll());
-        return "task/index";
+        System.out.println("TU JESTEM");
+        return "index";
     }
 
     @RequestMapping("/new")
     public String create(Model model){
         Task task = new Task();
         model.addAttribute("task",task);
-        return "task/new";
+        return "new";
     }
 
     @RequestMapping("/save")
     public String saveTask(@ModelAttribute("task") Task task){
         taskService.save(task);
-        return "redirect:/task/";
+        return "redirect:/";
     }
 
     @RequestMapping("/edit/{id}")
@@ -47,6 +46,6 @@ public class TaskController {
     @RequestMapping("/delete/{id}")
     public String deleteTask(@PathVariable(name = "id") int id){
         taskService.delete(id);
-        return "redirect:/task/";
+        return "redirect:/";
     }
 }

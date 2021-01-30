@@ -18,6 +18,7 @@ public class TaskService {
     }
 
     public void save(Task task){
+        //task.setTaskDate(task.getTaskDate());
         taskRepository.save(task);
     }
 

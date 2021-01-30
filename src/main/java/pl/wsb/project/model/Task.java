@@ -1,5 +1,7 @@
 package pl.wsb.project.model;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.persistence.*;
 import java.util.Date;
 
@@ -15,7 +17,7 @@ public class Task implements java.io.Serializable{
     public Task(){
 
     }
-    public Task(Integer id, String taskName, String taskDesc, String taskComplete, Date taskDate) {
+    public Task(Integer id, String taskName, String taskDesc, Date taskDate) {
         this.id = id;
         this.taskName = taskName;
         this.taskDesc = taskDesc;
@@ -50,6 +52,7 @@ public class Task implements java.io.Serializable{
     }
 
     @Temporal(TemporalType.DATE)
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     @Column(name = "taskdate", nullable = false)
     public Date getTaskDate() {
         return taskDate;
