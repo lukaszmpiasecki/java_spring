@@ -22,6 +22,12 @@ public class TaskController {
         return "index";
     }
 
+    @RequestMapping("/about")
+    public String about(){
+        System.out.println("WSZEDLEM");
+        return "/about";
+    }
+
     @RequestMapping("/new")
     public String create(Model model){
         Task task = new Task();
